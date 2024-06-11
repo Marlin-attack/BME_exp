@@ -1,4 +1,4 @@
-#### Black Marlin | Swordfish attacks | Enumeration tool | NTA tool
+#### Black Marlin | Swordfish attacks | Enumeration tool | NTA tool | [BME](https://github.com/pxcs/BlackMarlinExec/) |
 
 <a href="https://github.com/pxcs/BlackMarlinExec/"><p align="center">
 <img width="300" height="300" src="/images/swordfish.png">
@@ -7,7 +7,7 @@
 ## About BlackMarlinExec
 BlackMarlinExec uses graph and analysis theory to reveal the hidden and unintended relationships within an Active Directory or active environment. Attackers can use BlackMarlinExec to easily identify highly complex attack paths that would otherwise be impossible to `quickly` identify. It also has it's own attack path management that continuously maps and quantifies Active Directory attack paths. Attackers can see millions, even `billions` of attack paths within your existing architecture.
 
-## BlackMarlinExec [Kerberos](https://www.youtube.com/watch?v=-3MxoxdzFNI&t=353s&ab_channel=Conda) Performance
+## BlackMarlinExec [Kerberos](https://www.youtube.com/watch?v=-3MxoxdzFNI&t=353s&ab_channel=Conda) Attacks Performance
 BlackMarlinExec incorporates a specialized [Kerberos](https://github.com/pxcs/KerberossianCracker) attack module, empowering attackers to effectively test and exploit weaknesses within the Kerberos authentication protocol. This module is designed to enhance the enumeration and `analysis` capabilities by focusing on potential vulnerabilities in Kerberos implementations.
 
 #### Ticket Harvesting by:
@@ -20,6 +20,46 @@ By integrating advanced Kerberos attack techniques with [BME](https://github.com
 <a href="https://github.com/pxcs/KerberossianCracker"><p align="center">
 <img width="320" height="300" src="/images/qerberus.png">
 </p></a>
+
+## [LDAP](https://www.youtube.com/watch?v=Xjpi8xYqPcY&pp=ygUUa2VyYmVyb3MgdnMga2VyYmVyb3M%3D) & Kerberos Protocol Potential Attacks
+Using [BlackMarlinExec](https://github.com/pxcs/BlackMarlinExec/) to get benefits of integration. Firstly find a significant risk. An attacker would steal user credentials through malware or AD Attacks using [BME](https://github.com/pxcs/BlackMarlinExec/), enabling them to `obtain` a Ticket Granting Ticket (TGT) and access network services. Man-in-the-Middle (MITM) attacks pose another threat, where an attacker intercepts communication using [BME](https://github.com/pxcs/BlackMarlinExec/) to get access between the user and the Key Distribution Center (KDC) or between services and the LDAP directory, potentially `stealing` or `modifying` data.
+
+> [!IMPORTANT]
+> [<img src="https://darkcitygame.com/images/thumb/c/c3/Kerberos.png/500px-Kerberos.png" width="30">]()
+Attacker might steal user credentials through phishing, allowing them to get a Ticket Granting Ticket (TGT) and access network services. Another risk is ticket forgery, where an attacker creates fake tickets to impersonate users.<br><br>
+
+> [!WARNING]
+> [<img src="https://darkcitygame.com/images/thumb/c/c3/Kerberos.png/500px-Kerberos.png" width="30">]()
+Attackers intercept communications between users and the Key Distribution Center (KDC) or between services and the LDAP directory to steal or alter data. LDAP injection is another potential attack, where attackers manipulate directory queries to access or change data `illegally.`<br>
+
+## What Is the flaws in Kerberos?
+Biggest lose was the assumption of secure time system, and resolution of synchronization required.
+
+<a href="https://github.com/pxcs/BlackMarlinExec/"><p align="center">
+<img width="300" height="300" src="/images/kerberos_protocol_center.png">
+</p></a>
+
+Users authenticate once with Kerberos and can `access` multiple services without re-entering credentials, thanks to the TGT. ~Haha~ this is the time when the attackers could use this privileges.
+<br>
+
+## [LDAP](https://www.youtube.com/watch?v=S2mQBXcW3P0&pp=ygUMTERBUCBhdHRhY2tz) Automatic Injections
+<a href="https://github.com/pxcs/BlackMarlinExec/"><p align="center">
+<img width="150" height="150" src="/images/PEN-200_Fill.svg">
+<img width="150" height="150" src="/images/PEN-210_Fill.svg">
+</p></a>
+
+Using ***BME*** to automate the process of detecting and exploiting LDAP injection vulnerabilities in AD scenario. With [BME](https://github.com/pxcs/BlackMarlinExec/), Attackers can quickly identify and exploit LDAP injection flaws, allowing attackers to assess the security posture of the applications more effectively.
+
+## "Animal" Features
+
+- Automated detection of LDAP injection vulnerabilities.
+- Exploitation of LDAP injection vulnerabilities to extract sensitive information.
+- Customizable payloads for fine-tuning injection attacks.
+
+```
+Replace `<target_url>` with the URL of the web application you want to scan.
+```
+For any questions or inquiries, feel free to contact the `developers` [@pxcs](https://github.com/pxcs/)
 
 <hr>
 
@@ -68,6 +108,38 @@ By integrating advanced Kerberos attack techniques with [BME](https://github.com
   #grep with attackers .txt
   0.0.0.0 | grep 5 (-c-)(-Pn-) 'List.txt'
   ```
+<hr>
+
+## Main Usage
+
+```
+usage: BME [-h] [--command COMMAND] [--output OUTPUT] [--interface INTERFACE] [--port PORT]
+
+options:
+  -h, --help            show this help message and exit
+  --command COMMAND, -c COMMAND
+                        command to run on the target (default: calc)
+  --output OUTPUT, -o OUTPUT
+                        output maldoc file (default: BME)
+  --interface INTERFACE, -i INTERFACE
+                        network interface or IP address to host the HTTP server (default: eth0)
+  --port PORT, -p PORT  port to serve the HTTP server (default: 8000)
+```
+
+## Examples
+
+Pop results `BME.exe` :
+
+```
+$ BME.exe   
+[+] copied staging doc ./
+[+] finalizing payload doc ./
+[x] created maldoc ./
+[x] serving payload on :8000 (Example)
+```
+- [x] Output
+- [x] Output
+- [x] Output
 
 #### [Vulnerability Report](https://github.com/pxcs/CVE-29343-Sysmon-list/)
 
@@ -163,7 +235,7 @@ Evaluation method:
 Results were analyzed and compared for each model.<br/>
 
 #### PHASE 4 - Tuning and Enumeration
-> Kerberos and Marlin:  [Kerberos](https://github.com/pxcs/BlackMarlinExec/tree/main/kerberos/common)
+> Trust Kerberos Attack: [Kerberos](https://github.com/pxcs/BlackMarlinExec/tree/main/kerberos/common)
 
 Model tuning details:
 - Tuned model: Support Vector Classifier - [SVC](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC)
@@ -184,10 +256,16 @@ Publicly share you guys about my red teaming ***experiments*** tested on several
 
 <hr>
 
-# Disclaimer
+## Disclaimer
 ***BlackMarlinExec*** is designed primarily for research, identification, and authorized testing scenarios. This tool is to provide professionals and researchers with a tool to understand and identify vulnerabilities of the security systems. It is fundamentally imperative that users ensure they have obtained explicit, mutual consent from all involved parties before applying this tool on any system, or network.
 
 #### Educational purposes only.<br>
 
+## Sutton_Program Organization
+Check out the ORG repo for more tools like this [@](https://github.com/SuttonProgram)
+
 ## Thanks to
-Some credit to ugs people, and several [Github](https://github.com/) repo.
+
+- Allah and [pxcs](https://github.com/pxcs/) p3xsouger
+- Some credit to ugs people
+- And several open [Github](https://github.com/) repo.
