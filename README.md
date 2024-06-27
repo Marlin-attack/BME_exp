@@ -1,9 +1,3 @@
-[![Version](https://img.shields.io/badge/BME-5.4.5-brown.svg?maxAge=259200)](https://www.nuget.org/packages/BlackMarlinExec/)
-![Downloads](https://img.shields.io/nuget/dt/SharpHoundCommon)
-[![Build](https://img.shields.io/badge/Best_OS-Linux-orange.svg?color=brown)]()
-[![License](https://img.shields.io/badge/License-GPL%20v3%2B-blue.svg)](https://github.com/pxcs/BlackMarlinExec/LICENSES)
-[![Documentation](https://img.shields.io/static/v1?label=&message=documentation&color=blue)](https://github.com/pxcs/BlackMarlinExec/)
-
 ### BlackMarlinExec | Strikes | Enumeration tool | NTA tool | [BME](https://github.com/pxcs/BlackMarlinExec/) | Admin Domain Controller
 
 About **Active Directory** BlackMarlinExec, find the right attack path for pentesting and security researchs, it's ability to use graph theory to `reveal` the hidden and often unintended relationships within an online environments.
